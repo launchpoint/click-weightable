@@ -1,0 +1,11 @@
+-if(array_key_exists('weight', eval("return $klass::\$attribute_types;")))
+  :js
+    $(function() {
+      $('#<?=$table_id?>').tableDnD( {
+        onDrop: function(table, row) {
+          vals = $.tableDnD.serialize();
+          url = '<?=j(command_url('move', array(), $namespace))?>&'+vals;
+          $.get(url);
+        }
+      });
+    });

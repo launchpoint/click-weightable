@@ -1,0 +1,8 @@
+%td
+  -if(!$object->is_top)
+    =link_to('top', command_url('move', array('direction'=>'top', 'oid'=>$object->id))) 
+    =link_to('up', command_url('move', array('direction'=>'up', 'oid'=>$object->id)))
+%td
+  -if(!$object->is_bottom_for($objects))
+    =link_to('down', command_url('move', array('direction'=>'down', 'oid'=>$object->id)))
+    =link_to('bottom', command_url('move', array('direction'=>'bottom', 'oid'=>$object->id)))
